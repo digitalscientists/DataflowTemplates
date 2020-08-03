@@ -93,7 +93,7 @@ public class SpannerToBigQuery {
                         .withFormatFunction(StructToTableRowConverter::convert)
                         .withSchemaFromView(schemaView)
                         .withCreateDisposition(BigQueryIO.Write.CreateDisposition.CREATE_IF_NEEDED)
-                        .withWriteDisposition(BigQueryIO.Write.WriteDisposition.WRITE_APPEND));
+                        .withWriteDisposition(BigQueryIO.Write.WriteDisposition.WRITE_TRUNCATE));
 
         pipeline.run();
     }
